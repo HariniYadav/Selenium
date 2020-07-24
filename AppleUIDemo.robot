@@ -22,7 +22,7 @@ Apple UI Test
     Enter the values in ID creation page
     Items Selection Test
     SignIn Test
-    #Invalid Credential Test
+    
 
 
 *** Keywords ***
@@ -102,10 +102,6 @@ SignIn Test
     click element   xpath://a[@class='ac-gn-link ac-gn-link-search']
     input text  xpath://input[@placeholder='Search apple.com']  Apple Pencil
     Press Keys  xpath://input[@placeholder='Search apple.com']  RETURN
-    #click element   xpath://li[@class='as-tabnav-tablist-item tabnav-item as-search-tabnavitem current']
-    #click element   xpath://div[contains(@class,'as-search-facet Color')]//span[@class='icon icon-plus as-accordion-plusicon']
-    #click element   xpath://li[2]//a[1]//figure[1]//img[1]
-    #select from list by label   xpath://span[contains(@class,'as-search-sort-selected')]    Newest
     execute javascript  window.scrollTo(0,document.body.scrollHeight)
     sleep   2
     execute javascript  window.scrollTo(0,-document.body.scrollHeight)
@@ -113,14 +109,7 @@ SignIn Test
     click element   xpath://li[@class='ac-gn-item ac-gn-bag']//a[contains(@class,'ac-gn-link ac-gn-link-bag')]
     click element   xpath://a[@class='ac-gn-bagview-nav-link ac-gn-bagview-nav-link-signOut']
 
-Invalid Credential Test
-    [Documentation]  This test is to validate negative scenario using negative credential
-    click element   xpath://li[@class='ac-gn-item ac-gn-bag ac-gn-bag-small']//a[@class='ac-gn-link ac-gn-link-bag']
-    click element   xpath://a[@class='ac-gn-bagview-nav-link ac-gn-bagview-nav-link-signIn']
-    input text  xpath://input[@name='recon-0-0']    avengers8084@gmail.com
-    input text  xpath://input[@name='recon-0-1']    KillThanos80845
-    click element   id:signInButtonId
-    page should contain     Your account information was entered incorrectly
+
 
 
 
