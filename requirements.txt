@@ -1,10 +1,8 @@
 # packages needed to setup
 
+Dialogs==0.14
 robotframework==3.2.1
-robotframework-datadriver==0.36
-robotframework-jsonlibrary==0.3.1
+robotframework-faker==5.0.0
 robotframework-metrics==3.1.6
 robotframework-pabot>=1.8.0
-robotframework-requests==0.7.0
 robotframework-seleniumlibrary==4.4.0
-jsonpath==0.82
