@@ -1,0 +1,1674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.3 on win32)" generated="20200824 14:03:02.462" rpa="false">
+<suite id="s1" name="TestCases" source="C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\TestCases.robot">
+<kw name="Open the Browser" library="Keywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<arg>alias=Browser1</arg>
+</arguments>
+<msg timestamp="20200824 14:03:04.368" level="INFO">Opening browser 'chrome' to base url 'https://appleid.apple.com/'.</msg>
+<status status="PASS" starttime="20200824 14:03:04.368" endtime="20200824 14:03:14.965"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:03:04.368" endtime="20200824 14:03:14.966"></status>
+</kw>
+<test id="s1-t1" name="TestCase1: Creating Apple ID for a new user and doing some item selection Test">
+<kw name="Maximize the Browser" library="Keywords">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200824 14:03:14.971" endtime="20200824 14:03:15.129"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:03:14.969" endtime="20200824 14:03:15.130"></status>
+</kw>
+<kw name="Set Implicit Time" library="Keywords">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>15 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:03:15.133" endtime="20200824 14:03:15.140"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:03:15.131" endtime="20200824 14:03:15.141"></status>
+</kw>
+<kw name="Click on Create Apple ID Link" library="Keywords">
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_createid_link</arg>
+</arguments>
+<assign>
+<var>${createlink}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.144" level="INFO">${createlink} = Create Your Apple ID</msg>
+<status status="PASS" starttime="20200824 14:03:15.143" endtime="20200824 14:03:15.144"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>link:${createlink}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:15.145" level="INFO">Clicking element 'link:Create Your Apple ID'.</msg>
+<status status="PASS" starttime="20200824 14:03:15.144" endtime="20200824 14:03:15.857"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:03:15.141" endtime="20200824 14:03:15.858"></status>
+</kw>
+<kw name="Enter the values in ID creation page" library="Keywords">
+<doc>This user-defined keyword will help in entering the new user data on Apple Store Page</doc>
+<kw name="First Name" library="FakerLibrary">
+<assign>
+<var>${firstname}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.862" level="INFO">${firstname} = Frank</msg>
+<status status="PASS" starttime="20200824 14:03:15.860" endtime="20200824 14:03:15.862"></status>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<assign>
+<var>${lastname}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.864" level="INFO">${lastname} = Murphy</msg>
+<status status="PASS" starttime="20200824 14:03:15.863" endtime="20200824 14:03:15.864"></status>
+</kw>
+<kw name="Country" library="FakerLibrary">
+<assign>
+<var>${country}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.865" level="INFO">${country} = Nauru</msg>
+<status status="PASS" starttime="20200824 14:03:15.865" endtime="20200824 14:03:15.865"></status>
+</kw>
+<kw name="Date Of Birth" library="FakerLibrary">
+<doc>Generate a random date of birth represented as a Date object,
+constrained by optional miminimum_age and maximum_age
+parameters.</doc>
+<assign>
+<var>${dateofbirthobject}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.866" level="INFO">${dateofbirthobject} = 1949-03-18</msg>
+<status status="PASS" starttime="20200824 14:03:15.865" endtime="20200824 14:03:15.866"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${dateofbirthobject}</arg>
+</arguments>
+<assign>
+<var>${dateofbirthstring}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.870" level="INFO">${dateofbirthstring} = 1949-03-18</msg>
+<status status="PASS" starttime="20200824 14:03:15.867" endtime="20200824 14:03:15.871"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${dateofbirthstring}</arg>
+<arg>-</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>@{dateofbirtharray}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.874" level="INFO">@{dateofbirtharray} = [ 1949 | 03 | 18 ]</msg>
+<status status="PASS" starttime="20200824 14:03:15.873" endtime="20200824 14:03:15.874"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${dateofbirtharray}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${year}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.876" level="INFO">${year} = 1949</msg>
+<status status="PASS" starttime="20200824 14:03:15.875" endtime="20200824 14:03:15.876"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${dateofbirtharray}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${month}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.877" level="INFO">${month} = 03</msg>
+<status status="PASS" starttime="20200824 14:03:15.876" endtime="20200824 14:03:15.877"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${dateofbirtharray}</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.878" level="INFO">${date} = 18</msg>
+<status status="PASS" starttime="20200824 14:03:15.877" endtime="20200824 14:03:15.878"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${month} / ${date} / ${year}</arg>
+</arguments>
+<assign>
+<var>${dateofbirth}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.879" level="INFO">${dateofbirth} = 03 / 18 / 1949</msg>
+<status status="PASS" starttime="20200824 14:03:15.878" endtime="20200824 14:03:15.879"></status>
+</kw>
+<kw name="Ascii Company Email" library="FakerLibrary">
+<assign>
+<var>${email}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.881" level="INFO">${email} = todd42@coleman-brown.com</msg>
+<status status="PASS" starttime="20200824 14:03:15.879" endtime="20200824 14:03:15.881"></status>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<doc>Generate a random password of the specified ``length``.</doc>
+<assign>
+<var>${password}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.882" level="INFO">${password} = mu_M6NTkdU</msg>
+<status status="PASS" starttime="20200824 14:03:15.881" endtime="20200824 14:03:15.882"></status>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<assign>
+<var>${phonenumber}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.883" level="INFO">${phonenumber} = 5575963943</msg>
+<status status="PASS" starttime="20200824 14:03:15.882" endtime="20200824 14:03:15.883"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_firstname_xpath</arg>
+</arguments>
+<assign>
+<var>${fn}</var>
+</assign>
+<msg timestamp="20200824 14:03:15.884" level="INFO">${fn} = //first-name-input//input[@type='text']</msg>
+<status status="PASS" starttime="20200824 14:03:15.884" endtime="20200824 14:03:15.885"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>20 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:03:15.885" endtime="20200824 14:03:15.894"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath:${fn}</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:03:15.894" endtime="20200824 14:03:21.209"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${fn}</arg>
+<arg>${firstname}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:21.211" level="INFO">Typing text 'Frank' into text field 'xpath://first-name-input//input[@type='text']'.</msg>
+<status status="PASS" starttime="20200824 14:03:21.210" endtime="20200824 14:03:21.594"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_lastname_xpath</arg>
+</arguments>
+<assign>
+<var>${ln}</var>
+</assign>
+<msg timestamp="20200824 14:03:21.595" level="INFO">${ln} = //last-name-input//input[@type='text']</msg>
+<status status="PASS" starttime="20200824 14:03:21.594" endtime="20200824 14:03:21.595"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${ln}</arg>
+<arg>${lastname}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:21.595" level="INFO">Typing text 'Murphy' into text field 'xpath://last-name-input//input[@type='text']'.</msg>
+<status status="PASS" starttime="20200824 14:03:21.595" endtime="20200824 14:03:21.955"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_country_xpath</arg>
+</arguments>
+<assign>
+<var>${con}</var>
+</assign>
+<msg timestamp="20200824 14:03:21.956" level="INFO">${con} = //select[contains(@class,'form-dropdown country-picker')]</msg>
+<status status="PASS" starttime="20200824 14:03:21.956" endtime="20200824 14:03:21.956"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Select From List By Label</arg>
+<arg>xpath:${con}</arg>
+<arg>${country}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>xpath:${con}</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:21.958" level="INFO">Selecting options from selection list 'xpath://select[contains(@class,'form-dropdown country-picker')]' by label Nauru.</msg>
+<status status="PASS" starttime="20200824 14:03:21.957" endtime="20200824 14:03:22.123"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:03:21.957" endtime="20200824 14:03:22.123"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_dob_xpath</arg>
+</arguments>
+<assign>
+<var>${dob}</var>
+</assign>
+<msg timestamp="20200824 14:03:22.124" level="INFO">${dob} = //input[contains(@class,'date date-input generic-input-field')]</msg>
+<status status="PASS" starttime="20200824 14:03:22.123" endtime="20200824 14:03:22.124"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${dob}</arg>
+<arg>${dateofbirth}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:22.125" level="INFO">Typing text '03 / 18 / 1949' into text field 'xpath://input[contains(@class,'date date-input generic-input-field')]'.</msg>
+<status status="PASS" starttime="20200824 14:03:22.124" endtime="20200824 14:03:22.513"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_email_xpath</arg>
+</arguments>
+<assign>
+<var>${eml}</var>
+</assign>
+<msg timestamp="20200824 14:03:22.514" level="INFO">${eml} = //input[contains(@class,'form-field email-field field-has-info')]</msg>
+<status status="PASS" starttime="20200824 14:03:22.514" endtime="20200824 14:03:22.514"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${eml}</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:22.516" level="INFO">Typing text 'todd42@coleman-brown.com' into text field 'xpath://input[contains(@class,'form-field email-field field-has-info')]'.</msg>
+<status status="PASS" starttime="20200824 14:03:22.515" endtime="20200824 14:03:24.405"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_password_id</arg>
+</arguments>
+<assign>
+<var>${paswrd}</var>
+</assign>
+<msg timestamp="20200824 14:03:24.405" level="INFO">${paswrd} = password</msg>
+<status status="PASS" starttime="20200824 14:03:24.405" endtime="20200824 14:03:24.405"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:${paswrd}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:24.406" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20200824 14:03:24.482" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200824 14:03:24.944" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200824 14:03:24.406" endtime="20200824 14:03:24.944"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_confirmpassword_xpath</arg>
+</arguments>
+<assign>
+<var>${cnfpaswrd}</var>
+</assign>
+<msg timestamp="20200824 14:03:24.945" level="INFO">${cnfpaswrd} = //confirm-password-input//input[@type='password']</msg>
+<status status="PASS" starttime="20200824 14:03:24.945" endtime="20200824 14:03:24.945"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${cnfpaswrd}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:24.946" level="INFO">Typing password into text field 'xpath://confirm-password-input//input[@type='password']'.</msg>
+<msg timestamp="20200824 14:03:25.018" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200824 14:03:25.433" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200824 14:03:24.945" endtime="20200824 14:03:25.433"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_countrycode_xpath</arg>
+</arguments>
+<assign>
+<var>${concode}</var>
+</assign>
+<msg timestamp="20200824 14:03:25.434" level="INFO">${concode} = //div[contains(@class,'form-group phone-input')]//select[contains(@class,'')]</msg>
+<status status="PASS" starttime="20200824 14:03:25.433" endtime="20200824 14:03:25.434"></status>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>xpath:${concode}</arg>
+<arg>+91 (India)</arg>
+</arguments>
+<msg timestamp="20200824 14:03:25.434" level="INFO">Selecting options from selection list 'xpath://div[contains(@class,'form-group phone-input')]//select[contains(@class,'')]' by label +91 (India).</msg>
+<status status="PASS" starttime="20200824 14:03:25.434" endtime="20200824 14:03:25.617"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_phonenumber_xpath</arg>
+</arguments>
+<assign>
+<var>${phnnum}</var>
+</assign>
+<msg timestamp="20200824 14:03:25.618" level="INFO">${phnnum} = //idms-textbox//input[@type='tel']</msg>
+<status status="PASS" starttime="20200824 14:03:25.617" endtime="20200824 14:03:25.618"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${phnnum}</arg>
+<arg>${phonenumber}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:25.619" level="INFO">Typing text '5575963943' into text field 'xpath://idms-textbox//input[@type='tel']'.</msg>
+<status status="PASS" starttime="20200824 14:03:25.618" endtime="20200824 14:03:25.966"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20200824 14:03:25.967" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:03:25.966" endtime="20200824 14:03:25.979"></status>
+</kw>
+<kw name="Get Value From User" library="Dialogs">
+<doc>Pauses test execution and asks user to input a value.</doc>
+<arguments>
+<arg>Enter Captcha</arg>
+</arguments>
+<assign>
+<var>${Captcha}</var>
+</assign>
+<msg timestamp="20200824 14:03:35.920" level="INFO">${Captcha} = DT87W</msg>
+<status status="PASS" starttime="20200824 14:03:25.980" endtime="20200824 14:03:35.920"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_captcha_xpath</arg>
+</arguments>
+<assign>
+<var>${cap}</var>
+</assign>
+<msg timestamp="20200824 14:03:35.921" level="INFO">${cap} = //captcha-input//input[@type='text']</msg>
+<status status="PASS" starttime="20200824 14:03:35.921" endtime="20200824 14:03:35.922"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${cap}</arg>
+<arg>${Captcha}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:35.923" level="INFO">Typing text 'DT87W' into text field 'xpath://captcha-input//input[@type='text']'.</msg>
+<status status="PASS" starttime="20200824 14:03:35.922" endtime="20200824 14:03:36.326"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_continuebutton_classname</arg>
+</arguments>
+<assign>
+<var>${continue}</var>
+</assign>
+<msg timestamp="20200824 14:03:36.327" level="INFO">${continue} = overflow-text</msg>
+<status status="PASS" starttime="20200824 14:03:36.326" endtime="20200824 14:03:36.327"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>class:${continue}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.327" level="INFO">Clicking element 'class:overflow-text'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.327" endtime="20200824 14:03:36.452"></status>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${PATH}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.456" level="INFO" html="yes">Created file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.453" endtime="20200824 14:03:36.456"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.459" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.457" endtime="20200824 14:03:36.460"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Success Message: Entering Data for Creation of Apple ID Process is Successful \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.463" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.460" endtime="20200824 14:03:36.463"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.466" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.464" endtime="20200824 14:03:36.467"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Below are the new user details: \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.470" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.467" endtime="20200824 14:03:36.470"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.473" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.471" endtime="20200824 14:03:36.474"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>First Name: ${firstname} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.477" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.474" endtime="20200824 14:03:36.478"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Last Name: ${lastname} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.481" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.478" endtime="20200824 14:03:36.481"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Country: ${country} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.483" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.481" endtime="20200824 14:03:36.484"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Date of Birth: ${dateofbirth} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.488" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.485" endtime="20200824 14:03:36.488"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Email: ${email} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.490" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.488" endtime="20200824 14:03:36.490"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Phone: ${phonenumber} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.492" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.490" endtime="20200824 14:03:36.493"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.495" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.493" endtime="20200824 14:03:36.496"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>------------------------------------------------------------------------------------ \n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.499" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.496" endtime="20200824 14:03:36.499"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:03:36.504" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:03:36.500" endtime="20200824 14:03:36.504"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200824 14:03:41.510" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200824 14:03:36.505" endtime="20200824 14:03:41.510"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:03:15.859" endtime="20200824 14:03:41.510"></status>
+</kw>
+<kw name="Items Selection on Page" library="Keywords">
+<doc>This user-defined keyword will help in selection of items on Apple Store Page</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.open()</arg>
+</arguments>
+<msg timestamp="20200824 14:03:41.510" level="INFO">Executing JavaScript:
+window.open()
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:03:41.510" endtime="20200824 14:03:41.625"></status>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<doc>Switches to browser window matching ``locator``.</doc>
+<arguments>
+<arg>locator=NEW</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:03:41.625" endtime="20200824 14:03:41.667"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:41.668" level="INFO">Opening url 'https://appleid.apple.com/'</msg>
+<status status="PASS" starttime="20200824 14:03:41.667" endtime="20200824 14:03:45.684"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_ipadlink_xpath</arg>
+</arguments>
+<assign>
+<var>${ipadlink}</var>
+</assign>
+<msg timestamp="20200824 14:03:45.685" level="INFO">${ipadlink} = //a[@class='ac-gn-link ac-gn-link-ipad']</msg>
+<status status="PASS" starttime="20200824 14:03:45.684" endtime="20200824 14:03:45.685"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${ipadlink}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:45.686" level="INFO">Clicking link 'xpath://a[@class='ac-gn-link ac-gn-link-ipad']'.</msg>
+<status status="PASS" starttime="20200824 14:03:45.685" endtime="20200824 14:03:49.051"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20200824 14:03:49.054" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:03:49.052" endtime="20200824 14:03:49.078"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200824 14:03:51.080" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200824 14:03:49.079" endtime="20200824 14:03:51.081"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,-document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20200824 14:03:51.082" level="INFO">Executing JavaScript:
+window.scrollTo(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:03:51.081" endtime="20200824 14:03:51.113"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20200824 14:03:54.116" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200824 14:03:51.114" endtime="20200824 14:03:54.116"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_ipadminilink_xpath</arg>
+</arguments>
+<assign>
+<var>${ipadminilink}</var>
+</assign>
+<msg timestamp="20200824 14:03:54.116" level="INFO">${ipadminilink} = //li[@class='chapternav-item chapternav-item-ipad-mini']//a[@class='chapternav-link']</msg>
+<status status="PASS" starttime="20200824 14:03:54.116" endtime="20200824 14:03:54.116"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${ipadminilink}</arg>
+</arguments>
+<msg timestamp="20200824 14:03:54.116" level="INFO">Clicking link 'xpath://li[@class='chapternav-item chapternav-item-ipad-mini']//a[@class='chapternav-link']'.</msg>
+<status status="PASS" starttime="20200824 14:03:54.116" endtime="20200824 14:04:02.009"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,2020)</arg>
+</arguments>
+<msg timestamp="20200824 14:04:02.011" level="INFO">Executing JavaScript:
+window.scrollTo(0,2020)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:04:02.010" endtime="20200824 14:04:02.026"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200824 14:04:04.035" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200824 14:04:02.026" endtime="20200824 14:04:04.035"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,-document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20200824 14:04:04.035" level="INFO">Executing JavaScript:
+window.scrollTo(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:04:04.035" endtime="20200824 14:04:04.078"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200824 14:04:09.081" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200824 14:04:04.079" endtime="20200824 14:04:09.081"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:03:41.510" endtime="20200824 14:04:09.081"></status>
+</kw>
+<doc>This testcase validates the data entry scenario and item selections scenario on Apple Store Page</doc>
+<tags>
+<tag>Creation</tag>
+</tags>
+<status status="PASS" starttime="20200824 14:03:14.967" endtime="20200824 14:04:09.081" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TestCase2: Login with valid and invalid credentials Test">
+<kw name="SignIn with Valid Credentials" library="Keywords">
+<doc>This user-defined keyword will help in sign with valid credentials on Apple Store Page</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>alias=Browser2</arg>
+</arguments>
+<msg timestamp="20200824 14:04:09.081" level="INFO">Opening browser 'chrome' to base url 'https://appleid.apple.com/'.</msg>
+<status status="PASS" starttime="20200824 14:04:09.081" endtime="20200824 14:04:18.302"></status>
+</kw>
+<kw name="Maximize the Browser" library="Keywords">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200824 14:04:18.305" endtime="20200824 14:04:18.476"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:04:18.304" endtime="20200824 14:04:18.476"></status>
+</kw>
+<kw name="Set Implicit Time" library="Keywords">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>15 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:04:18.477" endtime="20200824 14:04:18.488"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:04:18.476" endtime="20200824 14:04:18.489"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_baglink_xpath</arg>
+</arguments>
+<assign>
+<var>${baglink}</var>
+</assign>
+<msg timestamp="20200824 14:04:18.490" level="INFO">${baglink} = //li[@class='ac-gn-item ac-gn-bag']//a[@class='ac-gn-link ac-gn-link-bag']</msg>
+<status status="PASS" starttime="20200824 14:04:18.489" endtime="20200824 14:04:18.490"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${baglink}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:18.491" level="INFO">Clicking element 'xpath://li[@class='ac-gn-item ac-gn-bag']//a[@class='ac-gn-link ac-gn-link-bag']'.</msg>
+<status status="PASS" starttime="20200824 14:04:18.490" endtime="20200824 14:04:23.088"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${message1}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:23.133" level="INFO">Current page contains text 'Sign in to see if you have any saved items. Or continue shopping.'.</msg>
+<status status="PASS" starttime="20200824 14:04:23.089" endtime="20200824 14:04:23.133"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_continuelink_xpath</arg>
+</arguments>
+<assign>
+<var>${continuelink}</var>
+</assign>
+<msg timestamp="20200824 14:04:23.133" level="INFO">${continuelink} = //a[@class='button button-block button-super']</msg>
+<status status="PASS" starttime="20200824 14:04:23.133" endtime="20200824 14:04:23.133"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${continuelink}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:23.133" level="INFO">Clicking element 'xpath://a[@class='button button-block button-super']'.</msg>
+<status status="PASS" starttime="20200824 14:04:23.133" endtime="20200824 14:04:26.814"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_username_xpath</arg>
+</arguments>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20200824 14:04:26.815" level="INFO">${username} = //input[@name='appleId']</msg>
+<status status="PASS" starttime="20200824 14:04:26.814" endtime="20200824 14:04:26.815"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${username}</arg>
+<arg>avengers8084@gmail.com</arg>
+</arguments>
+<msg timestamp="20200824 14:04:26.816" level="INFO">Typing text 'avengers8084@gmail.com' into text field 'xpath://input[@name='appleId']'.</msg>
+<status status="PASS" starttime="20200824 14:04:26.816" endtime="20200824 14:04:27.389"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_password_xpath</arg>
+</arguments>
+<assign>
+<var>${pswrd}</var>
+</assign>
+<msg timestamp="20200824 14:04:27.390" level="INFO">${pswrd} = //input[@name='password']</msg>
+<status status="PASS" starttime="20200824 14:04:27.390" endtime="20200824 14:04:27.390"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${pswrd}</arg>
+<arg>KillThanos8084</arg>
+</arguments>
+<msg timestamp="20200824 14:04:27.391" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg timestamp="20200824 14:04:27.465" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200824 14:04:27.730" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200824 14:04:27.390" endtime="20200824 14:04:27.731"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_signIn_id</arg>
+</arguments>
+<assign>
+<var>${signInbutton}</var>
+</assign>
+<msg timestamp="20200824 14:04:27.732" level="INFO">${signInbutton} = signInButtonId</msg>
+<status status="PASS" starttime="20200824 14:04:27.731" endtime="20200824 14:04:27.732"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:${signInbutton}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:27.733" level="INFO">Clicking element 'id:signInButtonId'.</msg>
+<status status="PASS" starttime="20200824 14:04:27.732" endtime="20200824 14:04:27.952"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${message2}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:29.828" level="INFO">Current page contains text 'Your bag is empty'.</msg>
+<status status="PASS" starttime="20200824 14:04:27.953" endtime="20200824 14:04:29.829"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_shopping_xpath</arg>
+</arguments>
+<assign>
+<var>${shopping}</var>
+</assign>
+<msg timestamp="20200824 14:04:29.831" level="INFO">${shopping} = //a[@class='button button-block button-super button-secondary-alpha']</msg>
+<status status="PASS" starttime="20200824 14:04:29.830" endtime="20200824 14:04:29.831"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${shopping}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:29.831" level="INFO">Clicking element 'xpath://a[@class='button button-block button-super button-secondary-alpha']'.</msg>
+<status status="PASS" starttime="20200824 14:04:29.831" endtime="20200824 14:04:32.351"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_searching_xpath</arg>
+</arguments>
+<assign>
+<var>${searching}</var>
+</assign>
+<msg timestamp="20200824 14:04:32.354" level="INFO">${searching} = //a[@class='ac-gn-link ac-gn-link-search']</msg>
+<status status="PASS" starttime="20200824 14:04:32.353" endtime="20200824 14:04:32.354"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${searching}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:32.355" level="INFO">Clicking element 'xpath://a[@class='ac-gn-link ac-gn-link-search']'.</msg>
+<status status="PASS" starttime="20200824 14:04:32.354" endtime="20200824 14:04:32.648"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_item_xpath</arg>
+</arguments>
+<assign>
+<var>${item}</var>
+</assign>
+<msg timestamp="20200824 14:04:32.652" level="INFO">${item} = //input[@id='ac-gn-searchform-input']</msg>
+<status status="PASS" starttime="20200824 14:04:32.649" endtime="20200824 14:04:32.652"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${item}</arg>
+<arg>Apple Pencil</arg>
+</arguments>
+<msg timestamp="20200824 14:04:32.654" level="INFO">Typing text 'Apple Pencil' into text field 'xpath://input[@id='ac-gn-searchform-input']'.</msg>
+<status status="PASS" starttime="20200824 14:04:32.653" endtime="20200824 14:04:33.543"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>xpath:${item}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200824 14:04:33.546" level="INFO">Sending key(s) ('RETURN',) to xpath://input[@id='ac-gn-searchform-input'] element.</msg>
+<msg timestamp="20200824 14:04:33.897" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20200824 14:04:33.897" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20200824 14:04:33.543" endtime="20200824 14:04:37.509"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_accessories_id</arg>
+</arguments>
+<assign>
+<var>${accessories}</var>
+</assign>
+<msg timestamp="20200824 14:04:37.510" level="INFO">${accessories} = accessories</msg>
+<status status="PASS" starttime="20200824 14:04:37.510" endtime="20200824 14:04:37.510"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:${accessories}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:37.511" level="INFO">Clicking element 'id:accessories'.</msg>
+<status status="PASS" starttime="20200824 14:04:37.511" endtime="20200824 14:04:37.651"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_brand_xpath</arg>
+</arguments>
+<assign>
+<var>${brand}</var>
+</assign>
+<msg timestamp="20200824 14:04:37.652" level="INFO">${brand} = //span[@class='as-search-accordion-title'][contains(text(),'Brand')]</msg>
+<status status="PASS" starttime="20200824 14:04:37.651" endtime="20200824 14:04:37.652"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>20 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:04:37.652" endtime="20200824 14:04:37.659"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath:${brand}</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:04:37.659" endtime="20200824 14:04:42.836"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${brand}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:42.837" level="INFO">Clicking element 'xpath://span[@class='as-search-accordion-title'][contains(text(),'Brand')]'.</msg>
+<status status="PASS" starttime="20200824 14:04:42.837" endtime="20200824 14:04:43.030"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_applecompany_xpath</arg>
+</arguments>
+<assign>
+<var>${company}</var>
+</assign>
+<msg timestamp="20200824 14:04:43.033" level="INFO">${company} = //span[contains(@class,'as-search-filter-text')][text()='Apple']</msg>
+<status status="PASS" starttime="20200824 14:04:43.032" endtime="20200824 14:04:43.033"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${company}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:43.035" level="INFO">Clicking element 'xpath://span[contains(@class,'as-search-filter-text')][text()='Apple']'.</msg>
+<status status="PASS" starttime="20200824 14:04:43.034" endtime="20200824 14:04:43.377"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200824 14:04:48.382" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200824 14:04:43.377" endtime="20200824 14:04:48.382"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20200824 14:04:48.382" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:04:48.382" endtime="20200824 14:04:48.433"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200824 14:04:50.436" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200824 14:04:48.433" endtime="20200824 14:04:50.436"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,500)</arg>
+</arguments>
+<msg timestamp="20200824 14:04:50.436" level="INFO">Executing JavaScript:
+window.scrollTo(0,500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:04:50.436" endtime="20200824 14:04:50.474"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200824 14:04:52.485" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200824 14:04:50.475" endtime="20200824 14:04:52.485"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0,-document.body.scrollHeight)</arg>
+</arguments>
+<msg timestamp="20200824 14:04:52.485" level="INFO">Executing JavaScript:
+window.scrollTo(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200824 14:04:52.485" endtime="20200824 14:04:52.526"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200824 14:04:54.529" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200824 14:04:52.526" endtime="20200824 14:04:54.529"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_signbag_link</arg>
+</arguments>
+<assign>
+<var>${baglink}</var>
+</assign>
+<msg timestamp="20200824 14:04:54.529" level="INFO">${baglink} = //li[@class='ac-gn-item ac-gn-bag']//a[contains(@class,'ac-gn-link ac-gn-link-bag')]</msg>
+<status status="PASS" starttime="20200824 14:04:54.529" endtime="20200824 14:04:54.529"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>20 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:04:54.529" endtime="20200824 14:04:54.545"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath:${baglink}</arg>
+</arguments>
+<status status="PASS" starttime="20200824 14:04:54.545" endtime="20200824 14:04:54.670"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${baglink}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:54.670" level="INFO">Clicking element 'xpath://li[@class='ac-gn-item ac-gn-bag']//a[contains(@class,'ac-gn-link ac-gn-link-bag')]'.</msg>
+<status status="PASS" starttime="20200824 14:04:54.670" endtime="20200824 14:04:54.874"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_signout_xpath</arg>
+</arguments>
+<assign>
+<var>${signOut}</var>
+</assign>
+<msg timestamp="20200824 14:04:54.875" level="INFO">${signOut} = //a[@class='ac-gn-bagview-nav-link ac-gn-bagview-nav-link-signOut']</msg>
+<status status="PASS" starttime="20200824 14:04:54.875" endtime="20200824 14:04:54.875"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${signOut}</arg>
+</arguments>
+<msg timestamp="20200824 14:04:54.876" level="INFO">Clicking element 'xpath://a[@class='ac-gn-bagview-nav-link ac-gn-bagview-nav-link-signOut']'.</msg>
+<status status="PASS" starttime="20200824 14:04:54.875" endtime="20200824 14:04:59.056"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200824 14:05:01.070" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200824 14:04:59.056" endtime="20200824 14:05:01.070"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:04:09.081" endtime="20200824 14:05:01.070"></status>
+</kw>
+<kw name="SignIn with Invalid Credentials" library="Keywords">
+<doc>This user-defined keyword will help in login with invalid credentials on Apple Store Page</doc>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_baglink_xpath</arg>
+</arguments>
+<assign>
+<var>${baglink}</var>
+</assign>
+<msg timestamp="20200824 14:05:01.070" level="INFO">${baglink} = //li[@class='ac-gn-item ac-gn-bag']//a[@class='ac-gn-link ac-gn-link-bag']</msg>
+<status status="PASS" starttime="20200824 14:05:01.070" endtime="20200824 14:05:01.070"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${baglink}</arg>
+</arguments>
+<msg timestamp="20200824 14:05:01.086" level="INFO">Clicking element 'xpath://li[@class='ac-gn-item ac-gn-bag']//a[@class='ac-gn-link ac-gn-link-bag']'.</msg>
+<status status="PASS" starttime="20200824 14:05:01.070" endtime="20200824 14:05:01.234"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_signinlink_xpath</arg>
+</arguments>
+<assign>
+<var>${signinlink}</var>
+</assign>
+<msg timestamp="20200824 14:05:01.237" level="INFO">${signinlink} = //a[@class='ac-gn-bagview-nav-link ac-gn-bagview-nav-link-signIn']</msg>
+<status status="PASS" starttime="20200824 14:05:01.235" endtime="20200824 14:05:01.237"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${signinlink}</arg>
+</arguments>
+<msg timestamp="20200824 14:05:01.238" level="INFO">Clicking element 'xpath://a[@class='ac-gn-bagview-nav-link ac-gn-bagview-nav-link-signIn']'.</msg>
+<status status="PASS" starttime="20200824 14:05:01.237" endtime="20200824 14:05:03.423"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_username_xpath</arg>
+</arguments>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20200824 14:05:03.424" level="INFO">${username} = //input[@name='appleId']</msg>
+<status status="PASS" starttime="20200824 14:05:03.423" endtime="20200824 14:05:03.424"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${username}</arg>
+<arg>avengers8084@gmail.com</arg>
+</arguments>
+<msg timestamp="20200824 14:05:03.425" level="INFO">Typing text 'avengers8084@gmail.com' into text field 'xpath://input[@name='appleId']'.</msg>
+<status status="PASS" starttime="20200824 14:05:03.424" endtime="20200824 14:05:03.933"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_password_xpath</arg>
+</arguments>
+<assign>
+<var>${pswrd}</var>
+</assign>
+<msg timestamp="20200824 14:05:03.933" level="INFO">${pswrd} = //input[@name='password']</msg>
+<status status="PASS" starttime="20200824 14:05:03.933" endtime="20200824 14:05:03.934"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:${pswrd}</arg>
+<arg>KillThanos80845</arg>
+</arguments>
+<msg timestamp="20200824 14:05:03.934" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg timestamp="20200824 14:05:04.012" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200824 14:05:04.283" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200824 14:05:03.934" endtime="20200824 14:05:04.283"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${e}</arg>
+<arg>get_signIn_id</arg>
+</arguments>
+<assign>
+<var>${signInbutton}</var>
+</assign>
+<msg timestamp="20200824 14:05:04.284" level="INFO">${signInbutton} = signInButtonId</msg>
+<status status="PASS" starttime="20200824 14:05:04.284" endtime="20200824 14:05:04.284"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:${signInbutton}</arg>
+</arguments>
+<msg timestamp="20200824 14:05:04.286" level="INFO">Clicking element 'id:signInButtonId'.</msg>
+<status status="PASS" starttime="20200824 14:05:04.285" endtime="20200824 14:05:04.455"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${message4}</arg>
+</arguments>
+<msg timestamp="20200824 14:05:05.124" level="INFO">Current page contains text 'Your account information was entered incorrectly'.</msg>
+<status status="PASS" starttime="20200824 14:05:04.456" endtime="20200824 14:05:05.124"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.134" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200824 14:05:05.124" endtime="20200824 14:05:07.134"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:01.070" endtime="20200824 14:05:07.134"></status>
+</kw>
+<doc>This testcase validates the login scenario with both valid and invalid credentials on Apple Store Page</doc>
+<tags>
+<tag>LogIn</tag>
+</tags>
+<status status="PASS" starttime="20200824 14:04:09.081" endtime="20200824 14:05:07.134" critical="yes"></status>
+</test>
+<test id="s1-t3" name="TestCase3: Getting Locations Test">
+<kw name="Getting Locations" library="Keywords">
+<doc>This user-defined keyword will help in getting URLs and Titles of opened browser pages</doc>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Current Browser URLs \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.134" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.134" endtime="20200824 14:05:07.134"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>-------------------------- \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.150" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.134" endtime="20200824 14:05:07.150"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.150" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.150" endtime="20200824 14:05:07.150"></status>
+</kw>
+<kw name="Get Locations" library="SeleniumLibrary">
+<doc>Returns and logs URLs of all windows of the selected browser.</doc>
+<assign>
+<var>@{currentBrowserLocation}</var>
+</assign>
+<msg timestamp="20200824 14:05:07.243" level="INFO">Altogether 1 item.
+1: https://secure2.store.apple.com/shop/sign_in?c=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ&amp;r=SCDHYHP7CY4H9XK2H&amp;s=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ</msg>
+<msg timestamp="20200824 14:05:07.243" level="INFO">@{currentBrowserLocation} = [ https://secure2.store.apple.com/shop/sign_in?c=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ&amp;r=SCDHYHP7CY4H9XK2H&amp;s=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZT...</msg>
+<status status="PASS" starttime="20200824 14:05:07.150" endtime="20200824 14:05:07.243"></status>
+</kw>
+<kw name="${i} IN [ @{currentBrowserLocation} ]" type="for">
+<kw name="${i} = https://secure2.store.apple.com/shop/sign_in?c=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ&amp;r=SCDHYHP7CY4H9XK2H&amp;s=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQy..." type="foritem">
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>${i} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.259" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.259" endtime="20200824 14:05:07.259"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.259" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.259" endtime="20200824 14:05:07.259"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.243" endtime="20200824 14:05:07.259"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.243" endtime="20200824 14:05:07.259"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.259" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.259" endtime="20200824 14:05:07.259"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>------------------------------------------------------------------------------------ \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.259" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.259" endtime="20200824 14:05:07.259"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.259" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.259" endtime="20200824 14:05:07.259"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>All Opened Browser URLs \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.259" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.259" endtime="20200824 14:05:07.259"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>----------------------------------- \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.259" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.259" endtime="20200824 14:05:07.259"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.275" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.259" endtime="20200824 14:05:07.275"></status>
+</kw>
+<kw name="Get Locations" library="SeleniumLibrary">
+<doc>Returns and logs URLs of all windows of the selected browser.</doc>
+<arguments>
+<arg>browser=ALL</arg>
+</arguments>
+<assign>
+<var>@{allBrowsersLocation}</var>
+</assign>
+<msg timestamp="20200824 14:05:07.769" level="INFO">Altogether 3 items.
+1: https://appleid.apple.com/account#!&amp;page=create
+2: https://www.apple.com/ipad-mini/
+3: https://secure2.store.apple.com/shop/sign_in?c=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ&amp;r=SCDHYHP7CY4H9XK2H&amp;s=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ</msg>
+<msg timestamp="20200824 14:05:07.769" level="INFO">@{allBrowsersLocation} = [ https://appleid.apple.com/account#!&amp;page=create | https://www.apple.com/ipad-mini/ | https://secure2.store.apple.com/shop/sign_in?c=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NW...</msg>
+<status status="PASS" starttime="20200824 14:05:07.275" endtime="20200824 14:05:07.769"></status>
+</kw>
+<kw name="${i} IN [ @{allBrowsersLocation} ]" type="for">
+<kw name="${i} = https://appleid.apple.com/account#!&amp;page=create" type="foritem">
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>${i} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.771" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.770" endtime="20200824 14:05:07.771"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.775" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.772" endtime="20200824 14:05:07.775"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.769" endtime="20200824 14:05:07.775"></status>
+</kw>
+<kw name="${i} = https://www.apple.com/ipad-mini/" type="foritem">
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>${i} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.778" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.775" endtime="20200824 14:05:07.778"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.781" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.779" endtime="20200824 14:05:07.781"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.775" endtime="20200824 14:05:07.781"></status>
+</kw>
+<kw name="${i} = https://secure2.store.apple.com/shop/sign_in?c=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ&amp;r=SCDHYHP7CY4H9XK2H&amp;s=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQy..." type="foritem">
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>${i} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.783" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.781" endtime="20200824 14:05:07.784"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.786" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.784" endtime="20200824 14:05:07.786"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.781" endtime="20200824 14:05:07.787"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.769" endtime="20200824 14:05:07.787"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.789" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.787" endtime="20200824 14:05:07.790"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>------------------------------------------------------------------------------------ \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.792" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.790" endtime="20200824 14:05:07.794"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.797" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.795" endtime="20200824 14:05:07.797"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>Current Browser Window Titles \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.798" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.797" endtime="20200824 14:05:07.799"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>--------------------------------- \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.801" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.799" endtime="20200824 14:05:07.801"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.803" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.801" endtime="20200824 14:05:07.803"></status>
+</kw>
+<kw name="Get Window Titles" library="SeleniumLibrary">
+<doc>Returns and logs titles of all windows of the selected browser.</doc>
+<assign>
+<var>@{currentBrowsertitles}</var>
+</assign>
+<msg timestamp="20200824 14:05:07.892" level="INFO">Altogether 1 item.
+1: Sign In — Secure Checkout - Apple</msg>
+<msg timestamp="20200824 14:05:07.913" level="INFO">@{currentBrowsertitles} = [ Sign In — Secure Checkout - Apple ]</msg>
+<status status="PASS" starttime="20200824 14:05:07.804" endtime="20200824 14:05:07.913"></status>
+</kw>
+<kw name="${i} IN [ @{currentBrowsertitles} ]" type="for">
+<kw name="${i} = Sign In — Secure Checkout - Apple" type="foritem">
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>${i} \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.916" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.914" endtime="20200824 14:05:07.916"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.918" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.916" endtime="20200824 14:05:07.918"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.914" endtime="20200824 14:05:07.918"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.914" endtime="20200824 14:05:07.918"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.919" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.918" endtime="20200824 14:05:07.919"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>------------------------------------------------------------------------------------ \n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.922" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.920" endtime="20200824 14:05:07.922"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>${PATH}</arg>
+<arg>\n</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.923" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt"&gt;C:\Users\HOME\PycharmProjects\Training\AppleDemo\TestSuite\results.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20200824 14:05:07.922" endtime="20200824 14:05:07.924"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.134" endtime="20200824 14:05:07.924"></status>
+</kw>
+<doc>This testcase will enter the details of opened browser pages in the test file</doc>
+<tags>
+<tag>Locations</tag>
+</tags>
+<status status="PASS" starttime="20200824 14:05:07.134" endtime="20200824 14:05:07.924" critical="yes"></status>
+</test>
+<test id="s1-t4" name="TestCase4: Embed File Test">
+<kw name="Embed the Text File" library="Keywords">
+<doc>This user-defined keyword will help in embed the text file in the report</doc>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>&lt;a href="http://localhost:63342/Training/AppleDemo/TestSuite/results.txt"&gt;Results Data File&lt;a&gt;</arg>
+<arg>html=True</arg>
+</arguments>
+<msg timestamp="20200824 14:05:07.927" level="INFO" html="yes">&lt;a href="http://localhost:63342/Training/AppleDemo/TestSuite/results.txt"&gt;Results Data File&lt;a&gt;</msg>
+<status status="PASS" starttime="20200824 14:05:07.927" endtime="20200824 14:05:07.927"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.926" endtime="20200824 14:05:07.928"></status>
+</kw>
+<doc>This testcase will embed the text file into report</doc>
+<tags>
+<tag>Embed</tag>
+</tags>
+<status status="PASS" starttime="20200824 14:05:07.925" endtime="20200824 14:05:07.928" critical="yes"></status>
+</test>
+<kw name="Close browsers" library="Keywords" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200824 14:05:07.930" endtime="20200824 14:05:13.071"></status>
+</kw>
+<status status="PASS" starttime="20200824 14:05:07.930" endtime="20200824 14:05:13.071"></status>
+</kw>
+<doc>Testing to validate different use cases on Apple Store Page</doc>
+<status status="PASS" starttime="20200824 14:03:02.462" endtime="20200824 14:05:13.071"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Creation</stat>
+<stat pass="1" fail="0">Embed</stat>
+<stat pass="1" fail="0">Locations</stat>
+<stat pass="1" fail="0">LogIn</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="TestCases">TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

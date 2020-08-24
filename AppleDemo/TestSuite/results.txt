@@ -1,0 +1,42 @@
+
+Success Message: Entering Data for Creation of Apple ID Process is Successful 
+
+Below are the new user details: 
+
+First Name: Frank 
+Last Name: Murphy 
+Country: Nauru 
+Date of Birth: 03 / 18 / 1949 
+Email: todd42@coleman-brown.com 
+Phone: 5575963943 
+
+------------------------------------------------------------------------------------ 
+
+Current Browser URLs 
+-------------------------- 
+
+https://secure2.store.apple.com/shop/sign_in?c=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ&r=SCDHYHP7CY4H9XK2H&s=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ 
+
+
+------------------------------------------------------------------------------------ 
+
+All Opened Browser URLs 
+----------------------------------- 
+
+https://appleid.apple.com/account#!&page=create 
+
+https://www.apple.com/ipad-mini/ 
+
+https://secure2.store.apple.com/shop/sign_in?c=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ&r=SCDHYHP7CY4H9XK2H&s=aHR0cHM6Ly93d3cuYXBwbGUuY29tL3wxYW9zZTQyMmM4Y2NkMTc4NWJhN2U2ZDI2NWFmYWU3NWI4YTJhZGIyYzAwZQ 
+
+
+------------------------------------------------------------------------------------ 
+
+Current Browser Window Titles 
+--------------------------------- 
+
+Sign In — Secure Checkout - Apple 
+
+
+------------------------------------------------------------------------------------ 
+
